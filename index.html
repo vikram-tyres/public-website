@@ -1,10 +1,67 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <title>My Website</title>
-  </head>
-  <body>
-    <h1>Welcome to my website!</h1>
-    <p>This is the homepage.</p>
-  </body>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Car Tyre Business</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Car Tyre Business</h1>
+        <p>Your one-stop shop for all your tyre needs</p>
+    </header>
+    <nav>
+        <a href="#services">Services</a>
+        <a href="#products">Products</a>
+        <a href="#testimonials">Testimonials</a>
+        <a href="#contact">Contact</a>
+    </nav>
+    <section id="services" class="services">
+        <h2>Our Services</h2>
+        <p>We offer a range of services including tyre fitting, balancing, and alignment.</p>
+    </section>
+    <section id="products" class="products">
+        <h2>Our Products</h2>
+        <p>We provide a wide selection of tyres from top brands for all types of vehicles.</p>
+    </section>
+    <section id="testimonials" class="testimonials">
+        <h2>Customer Testimonials</h2>
+        <p>See what our satisfied customers have to say about our services and products.</p>
+    </section>
+    <section id="contact" class="contact">
+        <h2>Contact Us</h2>
+        <p>Get in touch with us for more information or to schedule a service.</p>
+        <form>
+            <label for="name">Name:</label><br>
+            <input type="text" id="name" name="name"><br>
+            <label for="email">Email:</label><br>
+            <input type="email" id="email" name="email"><br>
+            <label for="message">Message:</label><br>
+            <textarea id="message" name="message" rows="4" cols="50"></textarea><br>
+            <input type="submit" value="Submit">
+        </form>
+    </section>
+    <footer>
+        <p>&copy; 2024 Car Tyre Business. All rights reserved.</p>
+    </footer>
+</body>
 </html>
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+      const sections = document.querySelectorAll('section');
+
+      function revealSection() {
+          sections.forEach(section => {
+              const sectionTop = section.getBoundingClientRect().top;
+              if (sectionTop < window.innerHeight * 0.85) {
+                  section.classList.add('visible');
+              }
+          });
+      }
+
+      window.addEventListener('scroll', revealSection);
+      revealSection(); // Call once to reveal sections in view on load
+  });
+</script>
+
